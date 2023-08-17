@@ -1,7 +1,13 @@
 import Graphic from "../assets/images/illustration-sign-up-desktop.svg";
+import MobileGraphic from "../assets/images/illustration-sign-up-mobile.svg"
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-function Card() {
+// import MediaQuery from "react-responsive/types/Component";
+import MediaQuery from 'react-responsive';
+
+
+function Card(props) {
+
   return (
     <div className="card">
       <div className="info">
@@ -20,8 +26,10 @@ function Card() {
               email: Yup.string().email("Valid email required").required(""),
             })}
             onSubmit={(values, { resetForm }) => {
-              alert(JSON.stringify(values, null, 2));
+            //   alert(JSON.stringify(values, null, 2));
               resetForm({ values: "" });
+              props.setSubmit(true);
+              props.setEmail(values.email)
             }}
           >
             <Form>
@@ -40,7 +48,12 @@ function Card() {
         </div>
       </div>
       <div className="graphic">
-        <img src={Graphic} alt="side graphic to display page details" />
+            <MediaQuery maxWidth={600}>
+                <img src={MobileGraphic} alt="promotional art to display device range"/>
+            </MediaQuery>
+            <MediaQuery minWidth={601}>
+                <img src={Graphic} alt="promotional art to display device range"/>
+            </MediaQuery>
       </div>
     </div>
   );

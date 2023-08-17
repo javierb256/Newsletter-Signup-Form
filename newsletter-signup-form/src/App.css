@@ -47,10 +47,6 @@ body {
 
 body {
   background-color: hsl(225, 21%, 30%);
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
   font-family: RobotoRegular;
 }
 
@@ -103,15 +99,6 @@ li {
   width: 50%;
   display: flex;
   justify-content: flex-end;
-  
-  /* background: url('./assets/images/illustration-sign-up-desktop.svg') no-repeat center; */
-  
-}
-
-.card .graphic img {
-  max-width: 100%;;
-
-  height: 100%;
 }
 
 label {
@@ -161,4 +148,172 @@ button:hover {
 #errorMessage {
   color: #FF673E;
   float: right;
+}
+
+@media (min-width: 601px) {
+  body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 800px) {
+  /* .card {
+    max-width: 800px;
+    height: 500px;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    padding: 1rem 1.2rem;
+    justify-content: space-between;
+  } */
+  
+  .card {
+    justify-content:space-around ;
+    /* gap: ; */
+    max-width: 600px;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .card .info {
+    padding: 3rem 0rem;
+    width: 50%;
+    padding-right: 1rem;
+  }
+
+  .card .info h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  ul {
+    margin-bottom: 1.2rem;
+  }
+  li {
+    font-size: 0.75rem;
+  }
+
+  .graphic {
+    width: 50%;
+  }
+
+  .card .graphic img {
+    /* max-width: 100%;; */
+    /* height: 100%; */
+    max-width: 100%;
+  }
+
+  /* .card .graphic img {
+    max-width: 100%;;
+    height: 100%;
+  } */
+  input {
+    display: block;
+    margin-top: 0.5rem;
+    margin-bottom: 1.3rem;
+    width: 100%;
+    padding: 0.7rem 1.2rem;
+    border: 1.5px solid;
+    border-color: rgb(202, 202, 202);
+    border-radius: 5px;
+  }
+
+  button {
+    font-family: RobotoBold;
+    border: none;
+    background: none;
+    color: white;
+    background-color: rgb(35,39,66);
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+}
+
+@media (max-width: 600px) {
+  .card {
+    /* flex-direction: column-reverse; */
+    flex-direction: column-reverse;
+    /* justify-content: flex-start; */
+    /* height: 130vh; */
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  .card .info h2 {
+    font-size: 3rem;
+  }
+
+  .card .info {
+    width: 100%;
+    padding: 1.5rem 2rem;
+  }
+
+  p,
+  li {
+    font-size: 1.3rem;
+  }
+
+  li {
+
+      background: url("./assets/images/icon-list.svg") no-repeat ;
+      /* padding: 5px 30px 5px 34px;
+      list-style: none;
+      margin: 0;
+      vertical-align: middle;
+      font-size: 1rem;
+      white-space: nowrap; */
+    padding-top: 0;
+    white-space: normal;
+    word-wrap: normal;
+  }
+
+  label {
+    font-size: 1rem;
+  }
+
+  input {
+    padding: 1rem 1.2rem;
+  }
+
+ 
+  .graphic {
+    width: 100%;
+  }
+
+ 
+
+  .card .graphic img {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 360px) {
+  .card .info h2 {
+    font-size: 2rem;
+  }
+
+  p,
+  li {
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+  }
 }
