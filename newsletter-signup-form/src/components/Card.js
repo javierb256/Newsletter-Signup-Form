@@ -1,6 +1,6 @@
 import Graphic from "../assets/images/illustration-sign-up-desktop.svg";
-import {Formik, Form, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 function Card() {
   return (
     <div className="card">
@@ -15,26 +15,35 @@ function Card() {
           </ul>
 
           <Formik
-            initialValues={{email: ''}}
+            initialValues={{ email: "" }}
             validationSchema={Yup.object({
-                email: Yup.string().email('valid email required').required('')
+              email: Yup.string().email("Valid email required").required(""),
             })}
-            onSubmit={(values, {resetForm}) => {
-                alert(JSON.stringify(values, null, 2));
-                resetForm({values: ''});
+            onSubmit={(values, { resetForm }) => {
+              alert(JSON.stringify(values, null, 2));
+              resetForm({ values: "" });
             }}
           >
             <Form>
-                <div>
-                <label htmlFor="email">Email address</label>
-                <Field type="email" name="email" placeholder="email@company.com"/>
-                    
-                </div>
-                <ErrorMessage name="email" component="div"/>
-                <button type="submit">Subscribe to monthly newsletter</button>
+              <label htmlFor="email">
+                Email address
+                <ErrorMessage name="email" component="div" id="errorMessage"/>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder="email@company.com"
+                />
+              </label>
+              <button type="submit">Subscribe to monthly newsletter</button>
             </Form>
           </Formik>
         </div>
       </div>
       <div className="graphic">
-        <img src={Graphic} alt="side graphic to display page det
+        <img src={Graphic} alt="side graphic to display page details" />
+      </div>
+    </div>
+  );
+}
+
+export default Card;
