@@ -51,7 +51,6 @@ body {
 }
 
 .card {
-  /* width: 60vw; */
   max-width: 800px;
   height: 500px;
   background-color: white;
@@ -65,10 +64,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* flex-grow: 1; */
   padding: 3rem 0rem;
   padding-left: 2rem;
-  /* background-color: aqua; */
   width: 58%;
 }
 
@@ -122,9 +119,9 @@ input:hover {
 }
 
 input:invalid {
-  border-color: #FF673E;
-  color: #FF673E;
-  background-color: #FFE8E6;
+  border-color: #ff673e;
+  color: #ff673e;
+  background-color: #ffe8e6;
 }
 
 button {
@@ -132,7 +129,7 @@ button {
   border: none;
   background: none;
   color: white;
-  background-color: rgb(35,39,66);
+  background-color: rgb(35, 39, 66);
   padding: 1rem 2rem;
   width: 100%;
   border-radius: 5px;
@@ -142,12 +139,49 @@ button {
 button:hover {
   cursor: pointer;
   background: rgb(255, 83, 121);
-  background: linear-gradient(90deg, rgba(255,83,121,1) 0%, rgba(255,105,62,1) 29%);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 83, 121, 1) 0%,
+    rgba(255, 105, 62, 1) 29%
+  );
+  box-shadow: 0px 5px 15px 0px rgb(255, 136, 162);
 }
 
 #errorMessage {
-  color: #FF673E;
+  color: #ff673e;
   float: right;
+}
+
+.confirmation {
+  background-color: white;
+  padding: 1.5rem 2.2rem;
+  width: 45vw;
+  width: 400px;
+  border-radius: 17px;
+}
+
+.confirmation h2 {
+  font-family: RobotoBold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.confirmation img {
+  width: 35px;
+  margin-bottom: 1rem;
+}
+
+.confirmation p {
+  line-height: 1.4;
+}
+
+.confirmation span {
+  font-family: RobotoBold;
+}
+
+.confirmation button {
+  padding: 0.8rem 2rem;
+  margin-bottom: 1rem;
 }
 
 @media (min-width: 601px) {
@@ -160,19 +194,8 @@ button:hover {
 }
 
 @media (max-width: 800px) {
-  /* .card {
-    max-width: 800px;
-    height: 500px;
-    background-color: white;
-    border-radius: 30px;
-    display: flex;
-    padding: 1rem 1.2rem;
-    justify-content: space-between;
-  } */
-  
   .card {
-    justify-content:space-around ;
-    /* gap: ; */
+    justify-content: space-around;
     max-width: 600px;
   }
 
@@ -190,12 +213,12 @@ button:hover {
     font-size: 2rem;
     margin-bottom: 1.2rem;
   }
-  
+
   p {
     font-size: 0.9rem;
     margin-bottom: 1.2rem;
   }
-  
+
   ul {
     margin-bottom: 1.2rem;
   }
@@ -208,15 +231,9 @@ button:hover {
   }
 
   .card .graphic img {
-    /* max-width: 100%;; */
-    /* height: 100%; */
     max-width: 100%;
   }
 
-  /* .card .graphic img {
-    max-width: 100%;;
-    height: 100%;
-  } */
   input {
     display: block;
     margin-top: 0.5rem;
@@ -233,21 +250,17 @@ button:hover {
     border: none;
     background: none;
     color: white;
-    background-color: rgb(35,39,66);
+    background-color: rgb(35, 39, 66);
     padding: 1rem 2rem;
     width: 100%;
     border-radius: 5px;
     font-size: 1rem;
   }
-  
 }
 
 @media (max-width: 600px) {
   .card {
-    /* flex-direction: column-reverse; */
     flex-direction: column-reverse;
-    /* justify-content: flex-start; */
-    /* height: 130vh; */
     width: 100%;
     height: 100%;
     border-radius: 0;
@@ -269,14 +282,8 @@ button:hover {
   }
 
   li {
+    background: url("./assets/images/icon-list.svg") no-repeat;
 
-      background: url("./assets/images/icon-list.svg") no-repeat ;
-      /* padding: 5px 30px 5px 34px;
-      list-style: none;
-      margin: 0;
-      vertical-align: middle;
-      font-size: 1rem;
-      white-space: nowrap; */
     padding-top: 0;
     white-space: normal;
     word-wrap: normal;
@@ -290,17 +297,57 @@ button:hover {
     padding: 1rem 1.2rem;
   }
 
- 
   .graphic {
     width: 100%;
   }
-
- 
 
   .card .graphic img {
     width: 100%;
   }
 
+  .confirmation {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 430px;
+  }
+}
+
+@media (max-width: 420px) {
+  body,
+  html {
+    height: 100%;
+    background-color: white;
+  }
+  .confirmation {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .confirmation img {
+    margin-top: 5rem;
+    margin-bottom: 2.5rem;
+    width: 80px;
+  }
+
+  .confirmation h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .confirmation p {
+    flex-grow: 1;
+  }
+
+  .confirmation button {
+    height: 60px;
+  }
 }
 
 @media (max-width: 360px) {
@@ -315,5 +362,9 @@ button:hover {
 
   button {
     font-size: 0.8rem;
+  }
+
+  .confirmation h2 {
+    font-size: 2rem;
   }
 }

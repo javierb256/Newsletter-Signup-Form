@@ -1,13 +1,10 @@
 import Graphic from "../assets/images/illustration-sign-up-desktop.svg";
-import MobileGraphic from "../assets/images/illustration-sign-up-mobile.svg"
+import MobileGraphic from "../assets/images/illustration-sign-up-mobile.svg";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-// import MediaQuery from "react-responsive/types/Component";
-import MediaQuery from 'react-responsive';
-
+import MediaQuery from "react-responsive";
 
 function Card(props) {
-
   return (
     <div className="card">
       <div className="info">
@@ -26,16 +23,15 @@ function Card(props) {
               email: Yup.string().email("Valid email required").required(""),
             })}
             onSubmit={(values, { resetForm }) => {
-            //   alert(JSON.stringify(values, null, 2));
               resetForm({ values: "" });
               props.setSubmit(true);
-              props.setEmail(values.email)
+              props.setEmail(values.email);
             }}
           >
             <Form>
               <label htmlFor="email">
                 Email address
-                <ErrorMessage name="email" component="div" id="errorMessage"/>
+                <ErrorMessage name="email" component="div" id="errorMessage" />
                 <Field
                   type="email"
                   name="email"
@@ -48,12 +44,15 @@ function Card(props) {
         </div>
       </div>
       <div className="graphic">
-            <MediaQuery maxWidth={600}>
-                <img src={MobileGraphic} alt="promotional art to display device range"/>
-            </MediaQuery>
-            <MediaQuery minWidth={601}>
-                <img src={Graphic} alt="promotional art to display device range"/>
-            </MediaQuery>
+        <MediaQuery maxWidth={600}>
+          <img
+            src={MobileGraphic}
+            alt="promotional art to display device range"
+          />
+        </MediaQuery>
+        <MediaQuery minWidth={601}>
+          <img src={Graphic} alt="promotional art to display device range" />
+        </MediaQuery>
       </div>
     </div>
   );
