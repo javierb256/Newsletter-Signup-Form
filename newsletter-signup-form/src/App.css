@@ -46,7 +46,8 @@ body {
 }
 
 body {
-  background-color: hsl(225, 21%, 30%);
+  /* background-color: hsl(234, 29%, 20%); */
+  background-color: hsl(235, 18%, 26%);
   font-family: RobotoRegular;
 }
 
@@ -119,8 +120,8 @@ input:hover {
 }
 
 input:invalid {
-  border-color: #ff673e;
-  color: #ff673e;
+  border-color: hsl(4,100%, 67%);
+  color: hsl(4,100%, 67%);
   background-color: #ffe8e6;
 }
 
@@ -129,7 +130,7 @@ button {
   border: none;
   background: none;
   color: white;
-  background-color: rgb(35, 39, 66);
+  background-color: hsl(235, 18%, 26%);
   padding: 1rem 2rem;
   width: 100%;
   border-radius: 5px;
